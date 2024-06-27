@@ -45,14 +45,17 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
+    console.log("Firebase initialized");
 
     async function filterData() {
       const searchTerm = document.getElementById('myInput').value;
+      console.log("Search term: ", searchTerm);
       const querySnapshot = await db.collection('filter_COA')
                                     .where('Cost.Center', '>=', searchTerm)
                                     .where('Cost.Center', '<=', searchTerm + '\uf8ff')
                                     .get();
       const data = querySnapshot.docs.map(doc => doc.data());
+      console.log("Data fetched: ", data);
       renderData(data);
     }
 
@@ -64,6 +67,7 @@
         row.innerHTML = `<td>${item['Cost.Center']}</td><td>${item['YD.Code']}</td><td>${item['Program']}</td><td>${item['Project']}</td><td>${item['Spend.Category']}</td><td>${item['Supplier']}</td><td>${item['Memo']}</td>`;
         tableBody.appendChild(row);
       });
+      console.log("Data rendered");
     }
   </script>
 </body>
