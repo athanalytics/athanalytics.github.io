@@ -1,0 +1,72 @@
+input#myInput { width: 220px; }
+table#myTable { width: 100%; }
+table#custom-table { width: 100%; }
+table#myTable th { text-align: left; padding: 20px 0 10px;}
+
+html *
+{
+   font-size: 1em !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+* {box-sizing: border-box}
+
+/* Button to open the content */
+.linkclass {
+	float: left;
+	cursor: pointer;
+	padding: 10px 15px 10px 10px;
+	background-color: #ddd;
+	border: none;
+}
+
+/* Button styling on mouse hover */
+#tabsDiv a:hover {
+  background-color: #ddd;
+}
+
+/* Change the color of the button */
+button.active {
+  background-color: #ccc;
+}
+
+#myInput {
+  background-image: url('searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#cc-search, #yd-search, #pg-search, #pj-search, #sc-search, #sp-search, #hm-search, #lm-search {
+  width: 12%
+}
+
+#myTable, #custom-table {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td, #custom-table th, #custom-table td {
+  text-align: left; /* Left-align text */ 
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr, #custom-table tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover, #custom-table tr.header, #custom-table tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+#cc-search, #yd-search, #pg-search, #pj-search, #sc-search, #sp-search, #hm-search, #lm-search {
+  box-sizing: border-box
+}
