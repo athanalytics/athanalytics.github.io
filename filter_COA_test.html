@@ -3,8 +3,6 @@
 <head>
   <title>COA Filter Test</title>
   <link rel="stylesheet" type="text/css" href="asset/master.css">
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
 </head>
 <body>
   <h1>Business Office: COA Filter Test</h1>
@@ -30,17 +28,24 @@
     </tbody>
   </table>
   
-  <script>
-    // Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyDVNwbw1tkMCu-qSKXyt3MZsvLPXJGBvR8",
-      authDomain: "athanalytics-daa90.firebaseapp.com",
-      projectId: "athanalytics-daa90",
-      storageBucket: "athanalytics-daa90.appspot.com",
-      messagingSenderId: "606022473336",
-      appId: "1:606022473336:web:db54e91edc7901aa48ff8d",
-      measurementId: "G-TP6D394Y1D"
-    };
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDVNWbw1tkMCu-qSKXyt3MZsvLPXJGBvR8",
+    authDomain: "athanalytics-daa90.firebaseapp.com",
+    projectId: "athanalytics-daa90",
+    storageBucket: "athanalytics-daa90.appspot.com",
+    messagingSenderId: "606022473336",
+    appId: "1:606022473336:web:db54e91edc7901aa48ff8d",
+    measurementId: "G-TP6D394Y1D"
+  };
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
