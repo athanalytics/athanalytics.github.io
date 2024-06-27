@@ -50,16 +50,21 @@
     async function filterData() {
       const searchTerm = document.getElementById('myInput').value;
       console.log("Search term: ", searchTerm);
-      const querySnapshot = await db.collection('filter_COA')
-                                    .where('Cost.Center', '>=', searchTerm)
-                                    .where('Cost.Center', '<=', searchTerm + '\uf8ff')
-                                    .get();
-      const data = querySnapshot.docs.map(doc => doc.data());
-      console.log("Data fetched: ", data);
-      renderData(data);
+      try {
+        const querySnapshot = await db.collection('filter_COA')
+                                      .where('Cost.Center', '>=', searchTerm)
+                                      .where('Cost.Center', '<=', searchTerm + '\uf8ff')
+                                      .get();
+        const data = querySnapshot.docs.map(doc => doc.data());
+        console.log("Data fetched: ", data);
+        renderData(data);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
     }
 
     function renderData(data) {
+      console.log("Rendering data...");
       const tableBody = document.getElementById('myTableBody');
       tableBody.innerHTML = ''; // Clear previous results
       data.forEach(item => {
