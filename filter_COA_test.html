@@ -3,8 +3,8 @@
 <head>
   <title>COA Filter Test</title>
   <link rel="stylesheet" type="text/css" href="asset/master.css">
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
 </head>
 <body>
   <h1>Business Office: COA Filter Test</h1>
@@ -69,10 +69,7 @@
       const searchTerm = document.getElementById('myInput').value;
       console.log("Search term: ", searchTerm);
       try {
-        const querySnapshot = await db.collection('filter_COA')
-                                      .where('Cost.Center', '>=', searchTerm)
-                                      .where('Cost.Center', '<=', searchTerm + '\uf8ff')
-                                      .get();
+        const querySnapshot = await db.collection('filter_COA').get();
         const data = querySnapshot.docs.map(doc => doc.data());
         console.log("Data fetched: ", data);
         renderData(data);
@@ -86,6 +83,7 @@
       const tableBody = document.getElementById('myTableBody');
       tableBody.innerHTML = ''; // Clear previous results
       data.forEach(item => {
+        console.log("Rendering item: ", item);
         const row = document.createElement('tr');
         row.innerHTML = `<td>${item['Cost.Center']}</td><td>${item['YD.Code']}</td><td>${item['Program']}</td><td>${item['Project']}</td><td>${item['Spend.Category']}</td><td>${item['Supplier']}</td><td>${item['Memo']}</td>`;
         tableBody.appendChild(row);

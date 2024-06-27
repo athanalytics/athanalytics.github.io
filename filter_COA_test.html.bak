@@ -47,6 +47,24 @@
     const db = firebase.firestore();
     console.log("Firebase initialized");
 
+    // Test Firestore connection
+    async function testFirestoreConnection() {
+      try {
+        const docRef = db.collection('testCollection').doc('testDocument');
+        const doc = await docRef.get();
+        if (doc.exists) {
+          console.log("Document data:", doc.data());
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error getting document:", error);
+      }
+    }
+
+    // Call the test function on page load
+    testFirestoreConnection();
+
     async function filterData() {
       const searchTerm = document.getElementById('myInput').value;
       console.log("Search term: ", searchTerm);
