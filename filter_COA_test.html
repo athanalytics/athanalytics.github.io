@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>COA Filter Test</title>
-  <link rel="stylesheet" type="text/css" href="asset/master.css">
+  <link rel="stylesheet" type="text/css" href="asset/master2.css">
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
@@ -43,10 +43,27 @@
     testFirestoreConnection();
 
     async function filterData() {
-      const searchTerm = document.getElementById('myInput').value;
-      console.log("Search term: ", searchTerm);
+      const ccSearch = document.getElementById('cc-search').value;
+      const ydSearch = document.getElementById('yd-search').value;
+      const pgSearch = document.getElementById('pg-search').value;
+      const pjSearch = document.getElementById('pj-search').value;
+      const scSearch = document.getElementById('sc-search').value;
+      const spSearch = document.getElementById('sp-search').value;
+      const hmSearch = document.getElementById('hm-search').value;
+
+      console.log("Search terms: ", { ccSearch, ydSearch, pgSearch, pjSearch, scSearch, spSearch, hmSearch });
+
       try {
-        const q = query(collection(db, "filter_COA"), where("Cost.Center", ">=", searchTerm), where("Cost.Center", "<=", searchTerm + "\uf8ff"));
+        let q = query(collection(db, "filter_COA"));
+
+        if (ccSearch) q = query(q, where("Cost.Center", ">=", ccSearch), where("Cost.Center", "<=", ccSearch + "\uf8ff"));
+        if (ydSearch) q = query(q, where("YD.Code", ">=", ydSearch), where("YD.Code", "<=", ydSearch + "\uf8ff"));
+        if (pgSearch) q = query(q, where("Program", ">=", pgSearch), where("Program", "<=", pgSearch + "\uf8ff"));
+        if (pjSearch) q = query(q, where("Project", ">=", pjSearch), where("Project", "<=", pjSearch + "\uf8ff"));
+        if (scSearch) q = query(q, where("Spend.Category", ">=", scSearch), where("Spend.Category", "<=", scSearch + "\uf8ff"));
+        if (spSearch) q = query(q, where("Supplier", ">=", spSearch), where("Supplier", "<=", spSearch + "\uf8ff"));
+        if (hmSearch) q = query(q, where("Memo", ">=", hmSearch), where("Memo", "<=", hmSearch + "\uf8ff"));
+
         const querySnapshot = await getDocs(q);
         const data = querySnapshot.docs.map(doc => doc.data());
         console.log("Data fetched: ", data);
@@ -74,7 +91,13 @@
   <h1>Business Office: COA Filter Test</h1>
   
   <!-- Search Input -->
-  <input type="text" id="myInput" onkeyup="filterData()" placeholder="Search for codes...">
+  <input type="text" id="cc-search" onkeyup="filterData()" placeholder="Cost Center.." class="table-search-filters">
+  <input type="text" id="yd-search" onkeyup="filterData()" placeholder="YD Code.." class="table-search-filters">
+  <input type="text" id="pg-search" onkeyup="filterData()" placeholder="Program.." class="table-search-filters">
+  <input type="text" id="pj-search" onkeyup="filterData()" placeholder="Project.." class="table-search-filters">
+  <input type="text" id="sc-search" onkeyup="filterData()" placeholder="Spend Category.." class="table-search-filters">
+  <input type="text" id="sp-search" onkeyup="filterData()" placeholder="Supplier.." class="table-search-filters">
+  <input type="text" id="hm-search" onkeyup="filterData()" placeholder="Memo.." class="table-search-filters">
   
   <!-- Table to Display Results -->
   <table id="myTable">
