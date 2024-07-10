@@ -3,28 +3,19 @@
 <nav>
   <ul>
     <li><a href="/index.html">Home</a></li>
-	<li><a href="/about.html">About</a></li>
 	<li><a href="/search_COA.html">Search for COA</a></li>
 
 <body>
 <h1>Update Log</h1>
 <p>7/9/2024:
 Added:
-Program: 
-PG01358 Facilities Capital - Administration (54)
-
-Project:
-PJ104479 Golf Association
-PJ029314 ATH Nantucket
-
-Vs.:
-
+PJ115957 FY25 Secondary Health Insurance
+PJ115589 Community Tennis
+PJ115719 YSD125 Celebration
+PJ115680 WCREW50 Celebration
 
 Removed:
-Project:
-PJ105921 Holy Cross FB Game
-PJ105922 Fordham FB Game
-PJ112087 Aquatics Programming
+Miscellaneous program/project codes
 </p>
 </body>
 </html>
