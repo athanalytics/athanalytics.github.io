@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="asset/master.css">
 <script src="asset/function.js"></script>
 <body>
-	<h1>Business Office: COA Search <i>(<a href="/update.html">update log</a> 2024-07-12)</i></h1>
+	<h1>Business Office: COA Search <i>(<a href="/update.html">update log</a> 7/12/2024)</i></h1>
 	<script>
 	const myFunction = () => {
 	  const trs = document.querySelectorAll('#myTable tr:not(.header)')
