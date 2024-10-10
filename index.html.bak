@@ -2643,6 +2643,12 @@
 		  <td>PJ116327</td>
 		  <td>RTH Comprehensive Renovation</td>
 		</tr>
+		<tr>
+		  <td>Facility</td>
+		  <td>Lapham Field House</td>
+		  <td>PJ116869</td>
+		  <td>Lapham Smilow Ribbon Cutting</td>
+		</tr>
 		</table>
 	</div>
 	<div id="Revenue Cate." class="contentClass">
@@ -4643,14 +4649,14 @@
 		</tr>
 		<tr>
 		  <td>AMERICAN MEDICAL RESPONSE OF CT</td>
-		  <td>PO-7686049</td>
+		  <td>PO-7986894</td>
 		  <td>Ambulance Coverage - Flat Rate (ALS)</td>
 		  <td>vs. Columbia</td>
 		  <td>Gameday event medical service standby. If the invoice is for multiple events, <br/>split the lines and include vs. for each line memo.</td>
 		</tr>
 		<tr>
 		  <td>B AND B TRANSPORTATION INC</td>
-		  <td>PO-7628840</td>
+		  <td>PO-7995639</td>
 		  <td>vs. Cornell</td>
 		  <td>5 Buses; 50 Hours</td>
 		  <td>Football gameday shuttle. Invoice comes in for single game; does not <br/>require to be split. Line memo includes number of buses; number of hours.</td>
@@ -4671,7 +4677,7 @@
 		</tr>
 		<tr>
 		  <td>LAZ PARKING LTD LLC</td>
-		  <td>PO-7744284</td>
+		  <td>PO-7988845</td>
 		  <td>vs. Penn</td>
 		  <td>ATT:5;SP:2;MG:0</td>
 		  <td>Gameday event parking service. Line memo includes number/hours<br/> of ATT, attendant; SP, supervisor; MG, manager.</td>
